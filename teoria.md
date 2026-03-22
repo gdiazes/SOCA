@@ -56,7 +56,55 @@
 *   **Shotts, W. E. (2019).** *The Linux Command Line: A Complete Introduction* (2nd ed.). No Starch Press. (Ideal para aprender el uso de la terminal).
 *   **Sobell, M. G. (2021).** *A Practical Guide to Linux Commands, Editors, and Shell Programming* (5th ed.). Addison-Wesley. (Guía profunda sobre scripting y editores).
 *   **van Vugt, S. (2020).** *Linux Basics for Hackers: Getting Started with Networking, Scripting, and Security in Kali* (1st ed.). No Starch Press. (Enfoque en seguridad y administración básica).
-```
+
+
+## SEMANA 2: Administración de Archivos y Directorios
+### 1. Gestión de Archivos y Directorios
+- **Sintaxis de comandos:** `comando -opción argumento`. (Ej: `ls -la`, `cat /etc/passwd`).
+- **Navegación y Creación:** `cd`, `touch`, `mkdir`, `rmdir`.
+- **Manipulación:** `cp` (copiar), `mv` (mover/renombrar), `rm -R` (borrado recursivo).
+- **Visualización:** `cat` (archivos pequeños), `more` y `less` (archivos grandes/pausados).
+- **Localización de ejecutables:** Uso de `$PATH` y ubicación de binarios (`/bin`, `/sbin`, `/usr/bin`).
+- **Historial:** Comando `history` para invocar comandos previos.
+
+### 2. Respaldos, Compresión y Archivos
+- **Comando `tar`:** Empaquetado de archivos. Opciones: `c` (crear), `t` (listar), `x` (extraer), `v` (visualizar), `f` (archivo).
+- **Compresión:** Estándar `gzip` (.gz), `bzip2` (.bz2). 
+  - Visualización directa: `zcat`, `bzcat`.
+- **DD (Data Duplicator):** Herramienta de bajo nivel para copias bit a bit y clonación de particiones. Sintaxis: `dd if=origen of=destino`.
+- **Tipos de archivo:** Uso del comando `file` para determinar el tipo de archivo (binario, texto, vacío, etc.).
+
+### 3. Gestión de Librerías Compartidas
+- **Librerías dinámicas:** Vitales para el funcionamiento de los binarios.
+- **Comandos clave:**
+  - `ldd`: Lista las dependencias de librerías de un programa.
+  - `ldconfig`: Actualiza el enlace de las librerías al instalar software nuevo.
+  - `/etc/ld.so.conf`: Archivo donde se definen las rutas de búsqueda de librerías.
+  - `LD_LIBRARY_PATH`: Variable de entorno para priorizar rutas de librerías.
+
+---
+
+## 4. Preguntas Frecuentes (FAQ) - Enfoque Semanal
+
+### P: "¿Cómo sé dónde está instalado un comando?"
+**R:** Usa `which <comando>` o revisa las rutas definidas en tu variable `$PATH` con `echo $PATH`. Si el programa no está ahí, debes indicar la ruta completa (ej: `/etc/sysconfig/listado`). *Ref: Shotts (2019).*
+
+### P: "¿Qué diferencia hay entre `tar -cvf` y `tar -cvfz`?"
+**R:** La flag `z` invoca a `gzip`. La primera crea un empaquetado simple, la segunda crea un empaquetado comprimido (tarball), lo cual es el estándar para respaldos en Linux.
+
+### P: "¿Qué sucede si una librería (ej. `libssl.so`) no se encuentra?"
+**R:** El programa fallará al ejecutarse. El procedimiento estándar es usar `ldd` sobre el binario para identificar qué archivo falta, instalarlo mediante el gestor de paquetes (`apt` o `yum`) y correr `ldconfig` para refrescar los enlaces.
+
+---
+
+## 5. Referencias Bibliográficas (Sustento del Curso)
+*   **Nemeth, E., et al. (2017).** *UNIX and Linux System Administration Handbook* (5th ed.). Addison-Wesley.
+*   **Shotts, W. E. (2019).** *The Linux Command Line: A Complete Introduction*. No Starch Press.
+*   **Sobell, M. G. (2021).** *A Practical Guide to Linux Commands, Editors, and Shell Programming*. Addison-Wesley.
+*   **van Vugt, S. (2020).** *Linux Basics for Hackers*. No Starch Press.
+
+---
+*Nota Pedagógica: La combinación de los conceptos de la Semana 1 (Estructura/Niveles) con la Semana 2 (Gestión de archivos/Librerías) constituye la base para cualquier administrador de servidores Linux profesional.*
 
 ### ¿Qué se agregó y por qué?
 *   **Fundamentación Académica:** Ahora, cada vez que el estudiante pregunte "¿Por qué?", la IA podrá citar el libro de **Nemeth** o **Sobell**, proporcionando una respuesta con respaldo institucional.
