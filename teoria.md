@@ -1,7 +1,3 @@
-Aquí tienes el procesamiento de la **Semana 1**, aplicando el rigor académico y el enriquecimiento técnico solicitado.
-
----
-
 # Semana 1: Introducción al ecosistema GNU/Linux
 ## Curso: Sistemas Operativos de Código Abierto | Tecsup
 
