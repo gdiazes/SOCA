@@ -1,5 +1,3 @@
-cat: 3: No such file or directory
-master@master:~$ cat 3.sh
 # 1. Limpieza inicial
 rm -rf laboratorio02
 
