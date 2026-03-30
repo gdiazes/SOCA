@@ -44,12 +44,7 @@ En la etapa avanzada, el SysAdmin integra Vim con el entorno del sistema operati
 
 ---
 
-###  Análisis Metodológico Aplicado
-Desde la perspectiva de la **metodología de estudio deliberada**, el aprendizaje de estos comandos debe ser segmentado para evitar la saturación cognitiva. Se recomienda que el estudiante no intente memorizar la lista de forma pasiva, sino que la incorpore mediante la **memoria muscular**.
 
-1.  **Fase de Adquisición:** Uso de `vimtutor` para internalizar los niveles de iniciación e intermedio.
-2.  **Fase de Consolidación:** Configuración del entorno mediante el archivo `.vimrc` para adaptar el editor a las necesidades específicas del administrador (ej. numeración de líneas, resaltado de sintaxis).
-3.  **Fase de Especialización:** Integración de Vim con herramientas de control de versiones (Git), permitiendo que la trazabilidad de los cambios sea documentada de manera profesional (Chacon & Straub, 2014).
 
 ###  Referencias Bibliográficas (APA 7.ª Edición)
 
