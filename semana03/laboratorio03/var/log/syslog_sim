@@ -1,0 +1,100 @@
+Apr 01 10:44:50 serverapp systemd[1]: Reached target network-online.target - Network is Online.
+Apr 01 10:44:50 serverapp systemd[1]: open-iscsi.service - Login to default iSCSI targets was skipped because no trigger condition checks were met.
+Apr 01 10:44:50 serverapp systemd[1]: Reached target remote-fs-pre.target - Preparation for Remote File Systems.
+Apr 01 10:44:50 serverapp systemd[1]: Reached target remote-fs.target - Remote File Systems.
+Apr 01 10:44:50 serverapp systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Apr 01 10:44:50 serverapp systemd[1]: Starting apport.service - automatic crash report generation...
+Apr 01 10:44:50 serverapp systemd[1]: Finished blk-availability.service - Availability of block devices.
+Apr 01 10:44:50 serverapp systemd[1]: pollinate.service - Pollinate to seed the pseudo random number generator was skipped because of an unmet condition check (ConditionPathExists=!/var/cache/pollinate/seeded).
+Apr 01 10:44:50 serverapp systemd[1]: systemd-pcrphase.service - TPM2 PCR Barrier (User) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Apr 01 10:44:50 serverapp systemd[1]: Starting systemd-user-sessions.service - Permit User Sessions...
+Apr 01 10:44:50 serverapp systemd[1]: Finished systemd-user-sessions.service - Permit User Sessions.
+Apr 01 10:44:50 serverapp systemd[1]: Starting plymouth-quit-wait.service - Hold until boot process finishes up...
+Apr 01 10:44:50 serverapp systemd[1]: Starting plymouth-quit.service - Terminate Plymouth Boot Screen...
+Apr 01 10:44:50 serverapp systemd[1]: Finished plymouth-quit-wait.service - Hold until boot process finishes up.
+Apr 01 10:44:50 serverapp systemd[1]: Starting setvtrgb.service - Set console scheme...
+Apr 01 10:44:50 serverapp systemd[1]: Finished plymouth-quit.service - Terminate Plymouth Boot Screen.
+Apr 01 10:44:50 serverapp systemd[1]: Finished setvtrgb.service - Set console scheme.
+Apr 01 10:44:50 serverapp systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+Apr 01 10:44:50 serverapp systemd[1]: Started getty@tty1.service - Getty on tty1.
+Apr 01 10:44:50 serverapp systemd[1]: Reached target getty.target - Login Prompts.
+Apr 01 10:44:50 serverapp apachectl[1054]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Apr 01 10:44:50 serverapp systemd[1]: Started apache2.service - The Apache HTTP Server.
+Apr 01 10:44:50 serverapp systemd[1]: Finished apport.service - automatic crash report generation.
+Apr 01 10:44:50 serverapp systemd[1]: Reached target multi-user.target - Multi-User System.
+Apr 01 10:44:50 serverapp systemd[1]: Reached target graphical.target - Graphical Interface.
+Apr 01 10:44:50 serverapp systemd[1]: Starting systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP...
+Apr 01 10:44:50 serverapp systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+Apr 01 10:44:50 serverapp systemd[1]: Finished systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP.
+Apr 01 10:44:50 serverapp systemd[1]: Startup finished in 3.998s (kernel) + 5.698s (userspace) = 9.696s.
+Apr 01 10:44:56 serverapp multipathd[472]: sda: triggering change event to reinitialize
+Apr 01 10:44:56 serverapp multipath[1077]: sda: failed to get sysfs uid: No such file or directory
+Apr 01 10:44:56 serverapp multipath[1077]: sda: failed to get sgio uid: No such file or directory
+Apr 01 10:44:56 serverapp multipathd[472]: sda: failed to get udev uid: No data available
+Apr 01 10:44:56 serverapp multipathd[472]: sda: failed to get path uid
+Apr 01 10:44:56 serverapp multipathd[472]: uevent trigger error
+Apr 01 10:45:03 serverapp snapd[808]: daemon.go:519: gracefully waiting for running hooks
+Apr 01 10:45:03 serverapp snapd[808]: daemon.go:521: done waiting for running hooks
+Apr 01 10:45:06 serverapp multipathd[472]: sda: triggering change event to reinitialize
+Apr 01 10:45:06 serverapp multipath[1087]: sda: failed to get sysfs uid: No such file or directory
+Apr 01 10:45:06 serverapp multipath[1087]: sda: failed to get sgio uid: No such file or directory
+Apr 01 10:45:06 serverapp multipathd[472]: sda: failed to get udev uid: No data available
+Apr 01 10:45:06 serverapp multipathd[472]: sda: failed to get path uid
+Apr 01 10:45:06 serverapp multipathd[472]: uevent trigger error
+Apr 01 10:45:06 serverapp snapd[808]: overlord.go:515: Released state lock file
+Apr 01 10:45:06 serverapp snapd[808]: daemon stop requested to wait for socket activation
+Apr 01 10:45:06 serverapp systemd[1]: snapd.service: Deactivated successfully.
+Apr 01 10:45:16 serverapp multipathd[472]: sda: triggering change event to reinitialize
+Apr 01 10:45:16 serverapp multipath[1098]: sda: failed to get sysfs uid: No such file or directory
+Apr 01 10:45:16 serverapp multipath[1098]: sda: failed to get sgio uid: No such file or directory
+Apr 01 10:45:16 serverapp multipathd[472]: sda: failed to get sysfs uid: No such file or directory
+Apr 01 10:45:16 serverapp multipathd[472]: sda: failed to get sgio uid: No such file or directory
+Apr 01 10:45:16 serverapp multipathd[472]: sda: failed to get path uid
+Apr 01 10:45:16 serverapp multipathd[472]: uevent trigger error
+Apr 01 10:45:16 serverapp systemd[1]: systemd-fsckd.service: Deactivated successfully.
+Apr 01 10:45:18 serverapp systemd[1]: systemd-timedated.service: Deactivated successfully.
+Apr 01 10:45:20 serverapp systemd-timesyncd[639]: Contacted time server 185.125.190.56:123 (ntp.ubuntu.com).
+Apr 01 10:45:20 serverapp systemd-timesyncd[639]: Initial clock synchronization to Wed 2026-04-01 10:45:20.742055 UTC.
+Apr 01 10:45:26 serverapp multipathd[472]: sda: not initialized after 3 udev retriggers
+Apr 01 10:45:26 serverapp systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 01 10:45:26 serverapp sshd[1109]: Server listening on 0.0.0.0 port 22.
+Apr 01 10:45:26 serverapp sshd[1109]: Server listening on :: port 22.
+Apr 01 10:45:26 serverapp systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 01 10:45:27 serverapp multipathd[472]: sda: add missing path
+Apr 01 10:45:27 serverapp multipathd[472]: sda: failed to get sysfs uid: No such file or directory
+Apr 01 10:45:27 serverapp multipathd[472]: sda: failed to get sgio uid: No such file or directory
+Apr 01 10:45:27 serverapp multipathd[472]: sda: no WWID in state "undef
+Apr 01 10:45:27 serverapp multipathd[472]: ", giving up
+Apr 01 10:45:27 serverapp multipathd[472]: sda: check_path() failed, removing
+Apr 01 10:45:29 serverapp sshd[1110]: Accepted password for alumno from 192.168.3.233 port 58036 ssh2
+Apr 01 10:45:29 serverapp sshd[1110]: pam_unix(sshd:session): session opened for user alumno(uid=1000) by alumno(uid=0)
+Apr 01 10:45:29 serverapp systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+Apr 01 10:45:29 serverapp systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+Apr 01 10:45:29 serverapp systemd-logind[798]: New session 1 of user alumno.
+Apr 01 10:45:29 serverapp systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+Apr 01 10:45:29 serverapp systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+Apr 01 10:45:29 serverapp (systemd)[1117]: pam_unix(systemd-user:session): session opened for user alumno(uid=1000) by alumno(uid=0)
+Apr 01 10:45:29 serverapp systemd[1117]: Queued start job for default target default.target.
+Apr 01 10:45:29 serverapp systemd-journald[455]: File /var/log/journal/4ba134ba68e84459b517458aa3f47f7a/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+Apr 01 10:45:29 serverapp systemd[1117]: Created slice app.slice - User Application Slice.
+Apr 01 10:45:29 serverapp systemd[1117]: Started launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+Apr 01 10:45:29 serverapp systemd[1117]: Reached target paths.target - Paths.
+Apr 01 10:45:29 serverapp systemd[1117]: Reached target timers.target - Timers.
+Apr 01 10:45:29 serverapp systemd[1117]: Starting dbus.socket - D-Bus User Message Bus Socket...
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on dirmngr.socket - GnuPG network certificate management daemon.
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+Apr 01 10:45:29 serverapp systemd[1117]: Starting gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on keyboxd.socket - GnuPG public key management service.
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on pk-debconf-helper.socket - debconf communication socket.
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on snapd.session-agent.socket - REST API socket for snapd user session agent.
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+Apr 01 10:45:29 serverapp systemd[1117]: Listening on gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Apr 01 10:45:29 serverapp systemd[1117]: Reached target sockets.target - Sockets.
+Apr 01 10:45:29 serverapp systemd[1117]: Reached target basic.target - Basic System.
+Apr 01 10:45:29 serverapp systemd[1117]: Reached target default.target - Main User Target.
+Apr 01 10:45:29 serverapp systemd[1]: Started user@1000.service - User Manager for UID 1000.
+Apr 01 10:45:29 serverapp systemd[1117]: Startup finished in 130ms.
+Apr 01 10:45:29 serverapp systemd[1]: Started session-1.scope - Session 1 of User alumno.
+Apr 01 10:51:16 serverapp systemd[1117]: launchpadlib-cache-clean.service - Clean up old files in the Launchpadlib cache was skipped because of an unmet condition check (ConditionPathExists=/home/alumno/.launchpadlib/api.launchpad.net/cache).
