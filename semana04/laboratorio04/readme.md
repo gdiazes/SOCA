@@ -11,12 +11,13 @@
 * Una instancia de **Ubuntu 22.04 LTS o superior**.
 * Acceso a Internet (solo para la instalación inicial).
 * Usuario con permisos de `sudo`.
+* Enlace del reto: https://github.com/gdiazes/SOCA/blob/main/semana04/laboratorio04/reto.md 
 
 ##  Instalación del Reto (Solo para el Instructor)
 Ejecuta este comando como **root** para preparar el entorno de caos, descargar los binarios y activar los temporizadores:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04/lab4.sh | sudo bash
+curl -k -sSL https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04/lab4.sh | sudo bash
 ```
 
 ---
