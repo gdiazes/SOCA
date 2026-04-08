@@ -7,8 +7,8 @@ rm -f /usr/local/bin/prep-reto /usr/local/bin/check-retos
 
 echo "--- 2. Descargando Binarios desde GitHub ---"
 # Usamos -L para seguir redirecciones de GitHub
-wget -qL "$GITHUB_URL/prep-reto" -O /usr/local/bin/prep-reto
-wget -qL "$GITHUB_URL/check-retos" -O /usr/local/bin/check-retos
+wget -qL #https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04/prep-reto/prep-reto" -O /usr/local/bin/prep-reto
+wget -qL "https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04/prep-reto/check-retos" -O /usr/local/bin/check-retos
 
 echo "--- 3. Verificando integridad de descarga ---"
 SIZE_PREP=$(stat -c%s "/usr/local/bin/prep-reto")
