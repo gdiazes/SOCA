@@ -1,6 +1,6 @@
 #!/bin/bash
 # URL de tu repositorio (ajustada para descargar binarios)
-GITHUB_URL="https://github.com/gdiazies/SOCA/raw/main/semana04/laboratorio04"
+GITHUB_URL="https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04"
 
 echo "--- 1. Limpiando instalaciones previas ---"
 rm -f /usr/local/bin/prep-reto /usr/local/bin/check-retos
