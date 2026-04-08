@@ -16,7 +16,7 @@
 Ejecuta este comando como **root** para preparar el entorno de caos, descargar los binarios y activar los temporizadores:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/instalar-mision.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04/lab4.sh | sudo bash
 ```
 
 ---
