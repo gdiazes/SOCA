@@ -4,8 +4,8 @@ apt update && apt install -y gcc shc cron wget
 
 # 2. Descargar los códigos fuente desde GitHub
 URL="https://raw.githubusercontent.com/gdiazes/SOCA/refs/heads/main/semana04/laboratorio04/"
-wget -q $URL/prep-reto -O  /usr/local/bin/prep-reto
-wget -q $URL/check-retos -O /usr/local/bin/check-retos
+wget -q $URL/prep-reto  --no-check-certificate -O  /usr/local/bin/prep-reto
+wget -q $URL/check-retos  --no-check-certificate -O /usr/local/bin/check-retos
 
 # 4. Dar permisos SUID
 chmod 4755 /usr/local/bin/prep-reto
