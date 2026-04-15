@@ -32,6 +32,9 @@ Antes de operar, debemos asegurar la trazabilidad. No puedes aplicar cambios si 
 
 1.  **Obtención de la herramienta oficial (Speedtest CLI):**
     ```bash
+sudo apt install speedtest-cli
+speedtest-cli
+
     wget https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.deb
     ```
 2.  **Instalación:** `sudo dpkg -i ookla-speedtest-*.deb`
