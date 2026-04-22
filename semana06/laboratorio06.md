@@ -1,7 +1,7 @@
 # GUÍA DE LABORATORIO: Infraestructura de Red, Servicios DHCP y Análisis de Tráfico
-**Entorno:**  Ubuntu Server (CLI) y Windows (GUI) sobre VMware Workstation
-**Topología:**  Segmento de Red `10.160.10.0/24`
-**Objetivo:**  Configurar correctamente un servicio de red y un servidor DHCP
+** Entorno: **  Ubuntu Server (CLI) y Windows (GUI) sobre VMware Workstation
+** Topología:**  Segmento de Red `10.160.10.0/24`
+** Objetivo:**  Configurar correctamente un servicio de red y un servidor DHCP
 
 
 ## FASE 1: Preparación del Entorno Virtual (Capa Física Virtualizada)
