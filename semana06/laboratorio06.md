@@ -105,3 +105,30 @@ Validación empírica de la negociación cliente-servidor desde la máquina Wind
 1.  Haga clic en el paquete **DHCP Offer** en Wireshark. Despliegue la capa *Dynamic Host Configuration Protocol* en el panel inferior.
 2.  Navegue por las opciones (*Options*). Identifique e indique el código hexadecimal exacto de la opción donde viaja el parámetro `option routers 10.160.10.1` que usted configuró.
 3.  **Prueba de modificación:** Vuelva al servidor Linux, cambie el `default-lease-time` a 120 segundos. Reinicie el servicio (`systemctl restart`), ejecute un `renew` en Windows y demuestre en Wireshark capturando la pantalla de la opción específica donde el servidor le informa a Windows su nuevo tiempo de caducidad.
+
+
+Aquí tienes una rúbrica de evaluación diseñada para ser **sencilla, directa y objetiva**. 
+
+Está estructurada en base a **20 puntos** (escalable a cualquier sistema de calificación) y evalúa tanto la ejecución técnica como la comprensión teórica lograda a través de las preguntas de análisis.
+
+---
+
+### RÚBRICA DE EVALUACIÓN: LABORATORIO N° 06
+**Alumno/Grupo:** _______________________________________ **Fecha:** ___________
+
+| Criterios de Evaluación | Excelente (5 pts) | Bueno (3 pts) | En Desarrollo (2 pts) | Deficiente (0 pts) |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Configuración de Red (VMware y Netplan)** | Configura el *LAN Segment* (LAN1) correctamente. Aplica la IP estática (`10.160.10.10`) en YAML sin errores de indentación. | Configura la IP, pero requiere correcciones menores (ej. errores de sintaxis YAML o selección de adaptador en VMware). | Aplica la configuración, pero usa un segmento de red incorrecto o la IP se borra al reiniciar (no usó Netplan). | No logra configurar la red ni establecer la IP estática. |
+| **2. Implementación del Servidor DHCP** | Configura `dhcpd.conf` con el rango exacto (`.100` a `.150`), puerta de enlace y *authoritative*. El servicio marca `active (running)`. | El servicio levanta, pero omite un parámetro secundario (ej. tiempos de lease) o requiere reiniciar la máquina para funcionar. | El servicio falla (`failed`) debido a errores de sintaxis en el archivo que el alumno no logra depurar por completo. | No instala el servicio o el servidor no asigna IPs al cliente. |
+| **3. Captura y Análisis (Wireshark y Reto)** | Filtra y captura correctamente los 4 paquetes del proceso DORA. Ubica los códigos hexadecimales exactos del Router y el nuevo Lease Time. | Captura el proceso DORA, pero no logra identificar los campos específicos dentro de las opciones internas del paquete. | Captura tráfico DHCP, pero no evidencia el ciclo completo (solo descubre u ofrece) por falta de renovación (`/renew`). | No captura paquetes o no utiliza filtros, mostrando tráfico irrelevante. |
+| **4. Preguntas de Análisis Crítico** | Responde de forma técnica y fundamentada, demostrando comprensión profunda del funcionamiento de redes y protocolos. | Responde correctamente la mayoría de las preguntas, pero con argumentos básicos o falta de profundidad arquitectónica. | Responde de manera incompleta o demuestra confusión entre conceptos (ej. confunde MAC con IP, o TCP con UDP). | No responde las preguntas o sus respuestas carecen de total sentido técnico. |
+
+---
+
+### Escala de Calificación Sugerida:
+*   **18 - 20 puntos:** Nivel Sobresaliente (Domina la implementación y la teoría).
+*   **14 - 17 puntos:** Nivel Competente (Logra el objetivo técnico con leves deficiencias teóricas).
+*   **10 - 13 puntos:** Nivel Básico (Requiere acompañamiento para resolver problemas/troubleshooting).
+*   **00 - 09 puntos:** Nivel Insuficiente (No logró los objetivos mínimos del laboratorio).
+
+
