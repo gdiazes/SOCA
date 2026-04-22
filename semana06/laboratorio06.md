@@ -63,13 +63,13 @@ Transformamos el servidor de un simple nodo a un proveedor de servicios de infra
 *   **Comando:** `sudo nano /etc/dhcp/dhcpd.conf`
 *   **Configuración a agregar al final del archivo:**
     ```text
-    authoritative;
-    subnet 10.160.10.0 netmask 255.255.255.0 {
-      range 10.160.10.100 10.160.10.150;
-      option routers 10.160.10.1;
-      default-lease-time 600;
-      max-lease-time 7200;
-    }
+authoritative;
+subnet 10.150.10.0 netmask 255.255.255.0 {
+    range 10.150.10.100 10.150.10.150;  # <--- Asegúrate que ambos sean 10.150.10
+    option routers 10.150.10.10;        # Pon la IP de tu Linux (10.10) como gateway si quieres que él sea el router
+    default-lease-time 600;
+    max-lease-time 7200;
+}
     ```
 *   **Comando:** `sudo systemctl restart isc-dhcp-server`
 *   **Fundamento Técnico:** El bloque `subnet` define matemáticamente el segmento permitido. La directiva `authoritative` declara que este servidor dictamina la "verdad" en esta red frente a peticiones inválidas.
