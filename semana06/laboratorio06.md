@@ -85,7 +85,7 @@ Validación empírica de la negociación cliente-servidor desde la máquina Wind
 *   Abra **Wireshark** e inicie la captura en la tarjeta Ethernet.
 *   En la barra de filtros, escriba `dhcp` (o `bootp`) y presione Enter.
 *   **Fundamento Técnico:** La aplicación de filtros de visualización aísla los datagramas UDP en los puertos 67 y 68, ocultando el ruido de fondo (ARP, NetBIOS).
-*   > 🧠 **Pregunta de Análisis Crítico 7:** Considerando la naturaleza del proceso DHCP inicial, ¿por qué los ingenieros que diseñaron el protocolo eligieron UDP (orientado a no conexión) en lugar de TCP (orientado a conexión) para la asignación de direcciones?
+*   >   **Pregunta de Análisis Crítico 7:** Considerando la naturaleza del proceso DHCP inicial, ¿por qué los ingenieros que diseñaron el protocolo eligieron UDP (orientado a no conexión) en lugar de TCP (orientado a conexión) para la asignación de direcciones?
 
 **8. Identificación del momento de negociación (Análisis DORA en Wireshark):**
 *   En el CMD de Windows ejecute: `ipconfig /release` seguido de `ipconfig /renew`.
