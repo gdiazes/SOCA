@@ -22,12 +22,12 @@ Identificación del hardware lógico asignado por el Kernel.
 **2. Identificar la nomenclatura de la interfaz:**
 *   **Comando:** `ip link show`
 *   **Fundamento Técnico:** Muestra la Capa 2 (Enlace). Permite identificar la dirección MAC y el nombre lógico asignado por el sistema `systemd/udev` (ej. `ens33`).
-*   >   **Pregunta de Análisis Crítico 2:** ¿Por qué los sistemas operativos modernos como Linux abstraen las tarjetas de red con nombres lógicos (como `ens33`) en lugar de permitir que las aplicaciones se comuniquen directamente con las direcciones físicas (MAC) del hardware?
+*   >   **Pregunta de Análisis:** ¿Por qué los sistemas operativos modernos como Linux abstraen las tarjetas de red con nombres lógicos (como `ens33`) en lugar de permitir que las aplicaciones se comuniquen directamente con las direcciones físicas (MAC) del hardware?
 
 **3. Verificar asignaciones previas:**
 *   **Comando:** `ip address show`
 *   **Fundamento Técnico:** Audita la Capa 3 (Red) para confirmar si la interfaz retiene configuraciones que deban ser sobrescritas antes de la intervención.
-*   >   **Pregunta de Análisis Crítico 3:** Si al ejecutar este comando nota que la interfaz tiene un estado operativo 'UP' a nivel de Capa 2, pero NO tiene ninguna dirección IP asignada en Capa 3, ¿qué tipo de tráfico o protocolos de red aún pueden transitar por esa tarjeta?
+*   >   **Pregunta de Análisis:** Si al ejecutar este comando nota que la interfaz tiene un estado operativo 'UP' a nivel de Capa 2, pero NO tiene ninguna dirección IP asignada en Capa 3, ¿qué tipo de tráfico o protocolos de red aún pueden transitar por esa tarjeta?
 
 
 ## FASE 3: Nivel Intermedio - Direccionamiento Estático (Netplan)
@@ -47,7 +47,7 @@ Consolidación de la identidad del servidor en el segmento `10.160.10.0/24`.
     ```
 *   **Comando:** `sudo netplan apply`
 *   **Fundamento Técnico:** Netplan abstrae la configuración mediante YAML. Establecer una IP estática es mandatorio para los nodos que proveen servicios de infraestructura.
-*   >   **Pregunta de Análisis Crítico 4:** Matemáticamente, si un servidor DHCP estuviera configurado para obtener su propia IP de manera dinámica, ¿cómo afectaría esto a la tabla de enrutamiento de los clientes y a la fiabilidad del proceso de renovación de concesiones (leases)?
+*   >   **Pregunta de Análisis:** Matemáticamente, si un servidor DHCP estuviera configurado para obtener su propia IP de manera dinámica, ¿cómo afectaría esto a la tabla de enrutamiento de los clientes y a la fiabilidad del proceso de renovación de concesiones (leases)?
 
 
 
@@ -57,7 +57,7 @@ Transformamos el servidor de un simple nodo a un proveedor de servicios de infra
 **5. Instalación del Demonio DHCP:**
 *   **Comando:** `sudo apt update && sudo apt install isc-dhcp-server -y`
 *   **Fundamento Técnico:** Descarga e integra el servicio `dhcpd` en el árbol de procesos del sistema.
-*   >   **Pregunta de Análisis Crítico 5:** ¿Por qué es una mala práctica de administración instalar un paquete como `isc-dhcp-server` sin ejecutar previamente una sincronización de repositorios (`apt update`) en un entorno de producción?
+*   >   **Pregunta de Análisis:** ¿Por qué es una mala práctica de administración instalar un paquete como `isc-dhcp-server` sin ejecutar previamente una sincronización de repositorios (`apt update`) en un entorno de producción?
 
 **6. Declaración de Autoridad y Ámbito (Scope):**
 *   **Comando:** `sudo nano /etc/dhcp/dhcpd.conf`
@@ -73,7 +73,7 @@ Transformamos el servidor de un simple nodo a un proveedor de servicios de infra
     ```
 *   **Comando:** `sudo systemctl restart isc-dhcp-server`
 *   **Fundamento Técnico:** El bloque `subnet` define matemáticamente el segmento permitido. La directiva `authoritative` declara que este servidor dictamina la "verdad" en esta red frente a peticiones inválidas.
-*   >   **Pregunta de Análisis Crítico 6:** Si omitimos la palabra `authoritative;` y un cliente Windows recién conectado solicita una IP que usaba ayer en su casa (ej. `192.168.1.50`), ¿cómo reaccionaría nuestro servidor Linux de forma diferente a si la directiva estuviera activa?
+*   >   **Pregunta de Análisis:** Si omitimos la palabra `authoritative;` y un cliente Windows recién conectado solicita una IP que usaba ayer en su casa (ej. `192.168.1.50`), ¿cómo reaccionaría nuestro servidor Linux de forma diferente a si la directiva estuviera activa?
 
 
 
@@ -85,7 +85,7 @@ Validación empírica de la negociación cliente-servidor desde la máquina Wind
 *   Abra **Wireshark** e inicie la captura en la tarjeta Ethernet.
 *   En la barra de filtros, escriba `dhcp` (o `bootp`) y presione Enter.
 *   **Fundamento Técnico:** La aplicación de filtros de visualización aísla los datagramas UDP en los puertos 67 y 68, ocultando el ruido de fondo (ARP, NetBIOS).
-*   >   **Pregunta de Análisis Crítico 7:** Considerando la naturaleza del proceso DHCP inicial, ¿por qué los ingenieros que diseñaron el protocolo eligieron UDP (orientado a no conexión) en lugar de TCP (orientado a conexión) para la asignación de direcciones?
+*   >   **Pregunta de Análisis:** Considerando la naturaleza del proceso DHCP inicial, ¿por qué los ingenieros que diseñaron el protocolo eligieron UDP (orientado a no conexión) en lugar de TCP (orientado a conexión) para la asignación de direcciones?
 
 **8. Identificación del momento de negociación (Análisis DORA en Wireshark):**
 *   En el CMD de Windows ejecute: `ipconfig /release` seguido de `ipconfig /renew`.
@@ -95,7 +95,7 @@ Validación empírica de la negociación cliente-servidor desde la máquina Wind
     3.  **DHCP Request:** El cliente responde hacia `255.255.255.255`.
     4.  **DHCP ACK:** Origen `10.160.10.10` confirma la asignación.
 *   **Fundamento Técnico:** El proceso DORA evidencia cómo un nodo sin identidad en Capa 3 logra obtener parámetros de red comunicándose primero a nivel de difusión (Broadcast).
-*   >   **Pregunta de Análisis Crítico 8:** En el paso 3 (DHCP Request), si el cliente ya recibió una oferta directa del servidor con una IP específica, ¿por qué vuelve a enviar la solicitud a la dirección de Broadcast (`255.255.255.255`) en lugar de enviarla directamente por Unicast a la IP del servidor `10.160.10.10`? ¿Qué problema arquitectónico resuelve esto si hubieran dos servidores DHCP en la red "LAN1"?
+*   >   **Pregunta de Análisis:** En el paso 3 (DHCP Request), si el cliente ya recibió una oferta directa del servidor con una IP específica, ¿por qué vuelve a enviar la solicitud a la dirección de Broadcast (`255.255.255.255`) en lugar de enviarla directamente por Unicast a la IP del servidor `10.160.10.10`? ¿Qué problema arquitectónico resuelve esto si hubieran dos servidores DHCP en la red "LAN1"?
 
 
 
