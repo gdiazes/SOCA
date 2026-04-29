@@ -13,6 +13,8 @@ for i in {1..1000}; do echo "Log entry $i: Status OK" >> big_syslog.log; done
 # 2. Instalar MySQL Server (Entorno Debian/Ubuntu)
 sudo apt-get update
 sudo apt-get install -y mysql-server
+sudo /etc/init.d/mysql status
+sudo /etc/init.d/mysql start
 
 # 3. Configurar contraseña de root a "Tecsup00" y crear base de datos vacía
 sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Tecsup00'; FLUSH PRIVILEGES;"
