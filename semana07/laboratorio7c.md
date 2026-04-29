@@ -22,7 +22,7 @@ mysql -u root -pTecsup00 -e "CREATE DATABASE produccion_db;"
 echo "USE produccion_db; CREATE TABLE users (name VARCHAR(50)); INSERT INTO users VALUES ('admin_tecsup');" > backup_db.sql
 ```
 
-* **Nivel Básico:** Los Extremos del Archivo (head & tail)
+**Nivel Básico:** Los Extremos del Archivo (head & tail)
 * **Objetivo:** Limitar la vista de datos (Pág. 11 y 20).
 
 * **La Tarea:** Necesitas verificar rápidamente si el archivo `big_syslog.log` tiene la estructura correcta leyendo solo las primeras 3 líneas, y luego verificar cuál fue el último evento registrado leyendo las últimas 3 líneas.
