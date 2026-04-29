@@ -1,5 +1,5 @@
 **Guía de Laboratorio Avanzada: Módulo 1**
-** Tema: ** Filtrado de Texto y Control de Flujos (grep + Tuberías + FD)
+**Tema:** Filtrado de Texto y Control de Flujos (grep + Tuberías + FD)
 
 **Contexto del Sysadmin:** Ha saltado una alerta de madrugada. El servidor de producción prod-srv-01 está experimentando degradación de servicio y posibles intentos de intrusión. Tu misión es extraer la telemetría exacta para el equipo de respuesta a incidentes.
 
