@@ -52,7 +52,7 @@ tail -f big_syslog.log
 
 ---
 
-* **Nivel Avanzado:** Redirección de Entrada y Restauración de BD (<)
+**Nivel Avanzado:** Redirección de Entrada y Restauración de BD (<)
 * **Objetivo:** Automatizar la carga de datos (Pág. 5 y 18).
 
 * **La Tarea:** Necesitas contar las líneas del archivo de respaldo antes de subirlo, pero sin que la consola imprima el nombre del archivo en el resultado. Para ello, inyectarás el archivo al flujo de entrada estándar (FD 0) de `wc`.
