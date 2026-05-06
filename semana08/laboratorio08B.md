@@ -53,4 +53,4 @@ sudo setup_lab8_B
 | **4. Auditoría Forense** | Utiliza `which`, lee el historial y usa `env grep` para filtrar la variable oculta. **(3 pts)** | Localiza los archivos pero usa métodos ineficientes (leer todo env sin filtrar). **(1.5 pts)** | Falla en localizar los comandos de auditoría. **(0 pts)** | **3** |
 | **5. Sustentación (Cuestionario)** | Responde con fundamentos técnicos, diferenciando tipos de cron y persistencia de variables. **(4 pts)** | Respuestas parciales. Entiende el error pero no la teoría subyacente. **(2 pts)** | Respuestas incorrectas o nulas. **(0 pts)** | **4** |
 | **PUNTAJE TOTAL** | | | | **20** |
-infierno de SysNova Corp.
+
