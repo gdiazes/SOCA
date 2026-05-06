@@ -50,11 +50,7 @@ sudo setup_lab8_B
 | **1. Respuesta a Incidentes (Crontab)** | Identifica la tabla de root con `crontab -l` y elimina la tarea (`crontab -r`) antes del reinicio. **(3 pts)** | Solo cancela el apagado con `shutdown -c` pero no logra borrar el cron. **(1.5 pts)** | No detecta la tarea programada. **(0 pts)** | **3** |
 | **2. Edición Crítica (Sudoers)** | Usa `visudo`. Borra el NOPASSWD masivo y aplica el `Cmnd_Alias` DB_ADMIN correctamente. Verifica efectividad. **(5 pts)** | Crea el Alias pero olvida borrar la vulnerabilidad original, dejando a Marcos como root. **(2.5 pts)** | Edita con editores inseguros (`nano`) o rompe la sintaxis. **(0 pts)** | **5** |
 | **3. Permisos y Entorno (PATH y Bashrc)** | Agrega a qa_lucia a sudo. Configura la ruta de scripts correcta y hace persistente el alias de monitoreo. **(5 pts)** | Configura el entorno pero sobrescribe la variable PATH en lugar de añadirla (`$PATH:`). **(2.5 pts)** | No logra completar las modificaciones de entorno. **(0 pts)** | **5** |
-| **4. Auditoría Forense** | Utiliza `which`, lee el historial y usa `env | grep` para filtrar la variable oculta. **(3 pts)** | Localiza los archivos pero usa métodos ineficientes (leer todo env sin filtrar). **(1.5 pts)** | Falla en localizar los comandos de auditoría. **(0 pts)** | **3** |
+| **4. Auditoría Forense** | Utiliza `which`, lee el historial y usa `env grep` para filtrar la variable oculta. **(3 pts)** | Localiza los archivos pero usa métodos ineficientes (leer todo env sin filtrar). **(1.5 pts)** | Falla en localizar los comandos de auditoría. **(0 pts)** | **3** |
 | **5. Sustentación (Cuestionario)** | Responde con fundamentos técnicos, diferenciando tipos de cron y persistencia de variables. **(4 pts)** | Respuestas parciales. Entiende el error pero no la teoría subyacente. **(2 pts)** | Respuestas incorrectas o nulas. **(0 pts)** | **4** |
 | **PUNTAJE TOTAL** | | | | **20** |
-
-
-```
-
-¡Todo listo para la Sección B! El estudiante solo tendrá que abrir su VM y digitar `sudo setup_lab8_B` para activar su propia versión del infierno de SysNova Corp.
+infierno de SysNova Corp.
