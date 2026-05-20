@@ -1,9 +1,9 @@
 
-#  GUÍA DE LABORATORIO TÉCNICO: Implementación Híbrida de Servidor de Impresión (Linux/Windows)
+##  GUÍA DE LABORATORIO TÉCNICO: Implementación Híbrida de Servidor de Impresión (Linux/Windows)
 
-**Módulo:** Sistemas Operativos de Código Abierto (Administración de Redes C20)
-**Entorno de Trabajo:** VMware Workstation Pro / Player
-**Subred Asignada:** `10.160.10.0/24` (Máscara: 255.255.255.0)
+** Módulo: ** Sistemas Operativos de Código Abierto (Administración de Redes C20)
+** Entorno de Trabajo: ** VMware Workstation Pro / Player
+** Subred Asignada: ** `10.160.10.0/24` (Máscara: 255.255.255.0)
 
 ---
 
