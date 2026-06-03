@@ -26,7 +26,7 @@ Al finalizar este laboratorio, el estudiante será capaz de:
 
 ## 4. Desarrollo de Retos Prácticos
 
-### 🛠️ Fase de Preparación de Herramientas
+###   Fase de Preparación de Herramientas
 Antes de iniciar, actualice los repositorios e instale los paquetes que utilizaremos en este laboratorio ejecutando:
 ```bash
 sudo apt update
@@ -35,7 +35,7 @@ sudo apt install -y lshw inxi stress-ng fontconfig smartmontools
 
 ---
 
-### RETO 1: Auditoría Profunda e Inventario del Sistema (45 minutos)
+### RETO 1: Auditoría Profunda e Inventario del Sistema 
 **Objetivo:** Obtener un inventario estructurado de los componentes físicos clave del servidor utilizando métodos no intrusivos [5, 8].
 
 #### Instrucciones de Ejecución:
@@ -62,7 +62,7 @@ sudo apt install -y lshw inxi stress-ng fontconfig smartmontools
 
 ---
 
-### RETO 2: Diagnóstico Seguro de Discos y Pruebas de Estrés (60 minutos)
+### RETO 2: Diagnóstico Seguro de Discos y Pruebas de Estrés 
 **Objetivo:** Aprender a manipular herramientas de integridad de datos de forma segura e identificar inestabilidades en la CPU bajo carga [11, 12].
 
 ####   Actividad Crítica de Seguridad: Simulación Segura de `fsck`
@@ -107,7 +107,7 @@ Como aprendió en clase, **ejecutar `fsck` sobre un sistema de archivos montado 
 
 ---
 
-### RETO 3: Depuración y Recuperación de la Interfaz Gráfica (60 minutos)
+### RETO 3: Depuración y Recuperación de la Interfaz Gráfica 
 **Objetivo:** Solucionar problemas de rendimiento, analizar controladores gráficos y simular la recuperación de un sistema gráfico colapsado [13, 14, 18].
 
 #### 1. Auditoría del Subsistema Gráfico
