@@ -129,6 +129,7 @@ make menuconfig
 ###  Fase 5: Compilación Multihilo y Empaquetado
 
 ```bash
+sudo apt install -y debhelper
 make clean
 make -j$(nproc) bindeb-pkg
 ```
