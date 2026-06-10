@@ -55,7 +55,7 @@ uname -r
 # 2. La arquitectura y detalles del sistema son documentados
 uname -a
 ```
-> ** NOTA:**  
+> **NOTA:**  
 > **Concepto:** Una llamada al sistema (*syscall*) es realizada por el comando `uname` para extraer la identidad y metadatos del kernel que se encuentra cargado en la memoria RAM (Tanenbaum & Bos, 2015).  
 > **Aplicación Profesional:** En auditorías de seguridad, un reporte de mitigación de vulnerabilidades es requerido. El comando `uname -r` es ejecutado masivamente a través de herramientas de automatización en múltiples servidores, con el fin de demostrar a los auditores que ninguna máquina ejecuta una versión vulnerable del sistema operativo.
 
@@ -69,7 +69,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential libncurses-dev bison flex libssl-dev \
                     libelf-dev dwarves bc dpkg-dev zstd
 ```
-> ** NOTA:**  
+> **NOTA:**   
 > **Concepto:** Dado que el kernel de Linux es escrito predominantemente en lenguaje C, el código fuente en texto plano debe ser traducido a lenguaje de máquina. Esta traducción es efectuada por compiladores (como `gcc`, incluido en la suite `build-essential`) (Blum & Bresnahan, 2025).  
 > **Aplicación Profesional:** A nivel corporativo, el software a menudo no es encontrado en repositorios oficiales. Por tanto, herramientas especializadas (ej. módulos de NGINX) son compiladas directamente desde el código fuente por el administrador de sistemas para satisfacer requerimientos a la medida.
 
@@ -83,7 +83,7 @@ wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.8.9.tar.xz
 tar -xvf linux-6.8.9.tar.xz
 cd linux-6.8.9
 ```
-> ** NOTA:**  
+> **NOTA:**  
 > **Concepto:** La obtención del "Vanilla Kernel" desde los archivos oficiales asegura que el código fuente es descargado en su estado puro, sin las modificaciones comerciales introducidas por distribuciones de terceros (Corbet & Kroah-Hartman, 2025).  
 > **Aplicación Profesional:** Si un fallo catastrófico (*zero-day exploit*) es descubierto en el software de los repositorios, las actualizaciones no son esperadas pasivamente. El código fuente oficial es obtenido, parcheado, compilado y desplegado inmediatamente en los entornos de producción.
 
@@ -97,7 +97,7 @@ cp /boot/config-$(uname -r) .config
 scripts/config --disable SYSTEM_TRUSTED_KEYS
 scripts/config --disable SYSTEM_REVOCATION_KEYS
 ```
-> ** NOTA:**  
+> **NOTA:** 
 > **Concepto:** El archivo `.config` dicta las características de hardware que serán compiladas. Debido a que la arquitectura de Ubuntu integra *Secure Boot*, sus kernels oficiales son firmados digitalmente. Al no disponerse de dichas llaves privadas de la empresa, los parámetros de validación deben ser desactivados para prevenir que el proceso de compilación sea abortado (Canonical Ltd., 2024).  
 > **Aplicación Profesional:** La administración de Infraestructuras de Llave Pública (PKI) y certificados criptográficos es una responsabilidad permanente. Mediante estos mecanismos, la integridad del software ejecutado es garantizada y las comunicaciones son cifradas.
 
@@ -120,7 +120,7 @@ make menuconfig
 2. **Controladores Físicos Desactivados:** Se suprimen de la compilación módulos como `Bluetooth`, `Wireless`, `Direct Rendering Manager` (Aceleración de Video) y `Sound card support`.
 *(Finalmente, los cambios son guardados en el archivo `.config` y el programa es cerrado).*
 
-> ** NOTA:**  
+> **NOTA:**   
 > **Concepto:** Este proceso es fundamentado en el principio de Reducción de Superficie de Ataque (*Attack Surface Reduction*). Al ser excluidas funciones innecesarias, no solo los recursos son optimizados, sino que millones de líneas de código susceptibles a vulnerabilidades son eliminadas del sistema (The Linux Kernel Organization, 2026).  
 > **Aplicación Profesional:** En entornos de Computación en la Nube, el hardware es estrictamente virtual. Por ende, los sistemas operativos son diseñados a medida (*JeOS - Just enough Operating System*) para que el arranque de los servicios sea logrado en cuestión de milisegundos y los costos operativos sean minimizados.
 
@@ -132,7 +132,7 @@ make menuconfig
 make clean
 make -j$(nproc) bindeb-pkg
 ```
-> ** NOTA:**  
+> **NOTA:**   
 > **Concepto:** Mediante el comando `nproc` es identificado el número de unidades lógicas de procesamiento disponibles. Al utilizar el parámetro `-j` (*Jobs*), la carga de trabajo es fraccionada en hilos paralelos. Posteriormente, el objetivo `bindeb-pkg` asegura que los binarios finales sean estructurados dentro de un formato empaquetado estándar de Debian (Hertzog & Mas, 2020).  
 > **Aplicación Profesional:** La compilación no es realizada de forma directa en servidores de producción; esta labor es delegada a infraestructuras de Integración y Despliegue Continuo (Pipelines CI/CD). Dichos sistemas generan el software empaquetado y lo distribuyen a miles de nodos simultáneamente.
 
@@ -146,7 +146,7 @@ ls -l *.deb
 sudo dpkg -i linux-*.deb
 sudo reboot
 ```
-> **  NOTA:**  
+> **NOTA:**   
 > **Concepto:** Al ejecutar la instalación mediante `dpkg`, el nuevo sistema base es registrado en la base de datos central. Automáticamente, eventos secundarios (*Triggers*) son disparados para compilar el `Initramfs` (sistema de archivos temporal de arranque) y actualizar las configuraciones del gestor de arranque `GRUB` (Petersen, 2021).  
 > **Aplicación Profesional:** El empaquetado permite metodologías de retroceso seguras (*Rollback*). Si un despliegue produce inestabilidad en producción, el paquete defectuoso puede ser purgado rápidamente (`apt remove <paquete>`) y los servicios son restaurados a su estado funcional en pocos segundos.
 
@@ -165,7 +165,7 @@ dmesg | grep -i fail
 # La sincronización entre las herramientas virtuales y el kernel es comprobada
 systemctl status open-vm-tools
 ```
-> **  NOTA:**  
+> **NOTA:**   
 > **Concepto:** El Búfer Anular del Kernel (`dmesg`) funciona como el registro inicial del sistema. En este sector de la memoria son almacenados todos los eventos de diagnóstico y carga de controladores ejecutados en la primera fase de inicialización del hardware (Petersen, 2021).  
 > **Aplicación Profesional:** En procesos de resolución de incidentes (*Troubleshooting*), la inspección de `dmesg` es obligatoria. Cualquier degradación física (como sectores corruptos en un disco duro o fallas en adaptadores de red) será registrada inmediatamente en este log. Este comportamiento es monitoreado de forma proactiva para prevenir caídas de los servicios.
 
