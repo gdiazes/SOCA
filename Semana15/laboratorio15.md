@@ -1,6 +1,6 @@
 
 
-#  GUÍA DE LABORATORIO 15: Troubleshooting y Respuesta a Incidentes (Metodología HP)
+#  GUÍA DE LABORATORIO 15: Troubleshooting.
 
 1. **Curso:** Sistemas Operativos de Código Abierto
 2. **Metodología:** HP Troubleshooting Flowchart
