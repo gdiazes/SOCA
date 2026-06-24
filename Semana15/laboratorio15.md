@@ -2,9 +2,9 @@
 
 #  GUÍA DE LABORATORIO 15: Troubleshooting y Respuesta a Incidentes (Metodología HP)
 
-**Curso:** Sistemas Operativos de Código Abierto
-**Metodología:** HP Troubleshooting Flowchart
-**Entorno:** VMware NAT Aislado (`10.160.10.0/24`) | Ubuntu Server 26 (Víctima: `.200`) - Kali Linux (Atacante: `.100`)
+1. **Curso:** Sistemas Operativos de Código Abierto
+2. **Metodología:** HP Troubleshooting Flowchart
+3. **Entorno:** VMware NAT Aislado (`10.160.10.0/24`) | Ubuntu Server 26 (Víctima: `.200`) - Kali Linux (Atacante: `.100`)
 
 ###  Contexto del Escenario
 Tu servidor web Apache (`10.160.10.200`) aloja un juego interactivo y una base de datos. Repentinamente, los usuarios reportan que el sistema está inoperativo o extremadamente lento (Jitter/Intermitencia). Tienes confirmación de que un nodo hostil (`10.160.10.100`) está operando en tu red. 
